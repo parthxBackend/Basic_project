@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Group Study Management System</title>
+  <meta name="description" content="Admin panel for managing users and study groups on the platform." />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+  <div id="toast-container"></div>
+
+  <div class="page-container">
+
+    <!-- ── Page Header ──────────────────────────────────────────────────── -->
+    <div class="page-header">
+      <h1>Admin Dashboard</h1>
+      <p class="text-muted">Platform overview, user management, and group management.</p>
+    </div>
+
+    <!-- ── Stats Cards ────────────────────────────────────────────────────── -->
+    <div class="stats-grid">
+
+      <div class="stat-card primary">
+        <div class="stat-label">Total Users</div>
+        <div class="stat-value" id="stat-total-users">—</div>
+      </div>
+
+      <div class="stat-card success">
+        <div class="stat-label">Students</div>
+        <div class="stat-value" id="stat-total-students">—</div>
+      </div>
+
+      <div class="stat-card warning">
+        <div class="stat-label">Study Groups</div>
+        <div class="stat-value" id="stat-total-groups">—</div>
+      </div>
+
+      <div class="stat-card info">
+        <div class="stat-label">Total Messages</div>
+        <div class="stat-value" id="stat-total-messages">—</div>
+      </div>
+
+    </div>
+
+    <!-- ── Users Table ────────────────────────────────────────────────────── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-header">
+        <h2 class="section-title">👤 All Users</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table aria-label="All platform users">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Joined</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="users-tbody">
+            <tr>
+              <td colspan="5" style="text-align:center;">
+                <div class="loading"><div class="spinner"></div> Loading…</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Groups Table ───────────────────────────────────────────────────── -->
+    <div>
+      <div class="section-header">
+        <h2 class="section-title">📚 All Study Groups</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table aria-label="All study groups">
+          <thead>
+            <tr>
+              <th>Group Name</th>
+              <th>Subject</th>
+              <th>Created By</th>
+              <th>Members</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="groups-tbody">
+            <tr>
+              <td colspan="5" style="text-align:center;">
+                <div class="loading"><div class="spinner"></div> Loading…</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Message Board | Group Study Management System</title>
+  <meta name="description" content="View and post messages in your study group's message board." />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+  <div id="toast-container"></div>
+
+  <!-- ── Group Header (hidden until membership is confirmed) ───────────────── -->
+  <div id="group-header" class="hidden" style="padding:0 1.5rem;max-width:1100px;margin:1.5rem auto 0;">
+    <div class="group-header-card">
+      <div class="group-header-info">
+        <h1 id="group-name">Loading…</h1>
+        <p>Subject: <strong id="group-subject"></strong></p>
+      </div>
+      <a href="/student-dashboard.html" class="btn btn-outline btn-sm">← Back to Dashboard</a>
+    </div>
+  </div>
+
+  <!--
+    #main-content is the mounting point.
+    group.js will either:
+      (a) Build the group layout (members sidebar + message board) inside it, OR
+      (b) Replace it with the access-denied screen.
+  -->
+  <div id="main-content" class="page-container" style="max-width:1100px;">
+    <!-- Loading placeholder shown until JS finishes the membership check -->
+    <div class="loading"><div class="spinner"></div> Loading message board…</div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/group.js"></script>
+</body>
+</html>
